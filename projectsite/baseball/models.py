@@ -21,7 +21,6 @@ class BaseModel(models.Model):
 class Position(BaseModel):
     description = models.CharField(max_length=100)
 
-    # It will display the description instead of Position object(n)
     def __str__(self):
         return f"{self.description}"
 
@@ -32,7 +31,6 @@ class Person(BaseModel):
     height = models.DecimalField(max_digits=10, decimal_places=5, null=True)
     weight = models.DecimalField(max_digits=10, decimal_places=5, null=True)
 
-    # It will display the lastname, firstname instead of Person object(n)
     def __str__(self):
         return f"{self.lastname}, {self.firstname}"
 

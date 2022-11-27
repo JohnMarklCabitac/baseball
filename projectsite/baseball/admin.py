@@ -3,8 +3,6 @@ from django.contrib.admin import display
 from .models import Position, Person, Club, Play, Match
 
 
-# Register your models here.
-
 @admin.register(Position)
 class PositionAdmin(admin.ModelAdmin):
     list_display =  ("description",)
