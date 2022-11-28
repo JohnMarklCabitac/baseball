@@ -31,6 +31,7 @@ class Person(BaseModel):
     height = models.DecimalField(max_digits=10, decimal_places=5, null=True)
     weight = models.DecimalField(max_digits=10, decimal_places=5, null=True)
 
+
     def __str__(self):
         return f"{self.lastname}, {self.firstname}"
 
