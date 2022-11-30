@@ -1,5 +1,6 @@
-% if is_paginated %}
- <nav aria-label="Topics pagination" class="mb-4">
+{% if is_paginated %}
+<div class="col-4 mx-auto">
+<nav aria-label="Topics pagination" class="mb-4">
    <ul class="pagination">
      {% if page_obj.number > 1 %}
        <li class="page-item">
@@ -24,7 +25,6 @@
          <li class="page-item active">
            <span class="page-link">
              {{ page_num }}
-             <span class="sr-only">(current)</span>
            </span>
          </li>
        {% elif page_num > page_obj.number|add:'-3' and page_num < page_obj.number|add:'3' %}
@@ -53,15 +53,5 @@
      {% endif %}
    </ul>
  </nav>
+</div> 
 {% endif %}
-Step 2. Add paginate_by = 1 inside the class. See example below.
-class MatchView(ListView):
-   model = Match
-   context_object_name = 'match'
-   template_name = "match.html"
-   paginate_by = 1
-The number 1 means number of record/s per page. Modify this according to your needs.
-Step 3. Add the code that includes the pagination in your page. See code below.
-</table>
-     
- {% include 'includes/pagination.html' %}

@@ -3,17 +3,20 @@
 
 {% block content %}
 <div class="container">
-    <p>
-      {{ header_text }}
-    </p>
-
+    <h2 class="text-center ">
+      <b>{{ header_text }}</b>
+    </h2>
+  <!-- <div class="col-4 mx-auto"> -->
     <div class="row">
         <ul class="list-unstyled">
             {% for object in object_list %}
             <li class="media">
-              <img class="mr-3" src="../media/img/{{object.team_pic}}" 
-              height="100px" 
-              alt="Generic placeholder image">
+              <div class="row">
+              <div class="col-12 text-center">
+                <img class="mb-5" src="../media/img/{{object.team_pic}}" 
+                height="300px" 
+                alt="Generic placeholder image">
+              
               <div class="media-body">
                 <h5 class="mt-0 mb-1">{{object.name}}</h5>
                 {{object.description}}
@@ -22,7 +25,10 @@
             <br>
             {% endfor %}
           </ul>
-    </div>
+        </div>
+      </div>
   </div>
+  </div>
+  {% include 'includes/pagination.html' %}
 
 {% endblock content %}

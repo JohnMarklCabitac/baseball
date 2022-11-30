@@ -3,9 +3,9 @@
 
 {% block content %}
 <div class="container">
-    <p>
-      {{ header_text }}
-    </p>
+    <h2 class="text-center">
+      <b>{{ header_text }}</b>
+    </h2>
 
     <div class="row">
         
@@ -31,13 +31,7 @@
               {% endfor %}
             </tbody>
           </table>
-       
-          
-           
-            
-            
-            
-       
+          {% include 'includes/pagination.html' %}
     </div>
   </div>
 
